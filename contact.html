@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sănătate Plus - Contact & FAQ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">
+                <i class="bi bi-heart-pulse-fill"></i> Sănătate Plus
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Acasă</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Servicii</a></li>
+                    <li class="nav-item"><a class="nav-link" href="doctors.html">Medici</a></li>
+                    <li class="nav-item"><a class="nav-link" href="schedule.html">Orar</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                    <li class="nav-item mt-2 mt-lg-0">
+                        <a class="btn btn-primary text-white ms-lg-3 px-4 rounded-pill shadow-sm" href="booking.html">Programează-te</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-white py-5 border-bottom mb-5">
+        <div class="container text-center py-3">
+            <h1 class="fw-bold text-dark">Contactează-ne</h1>
+            <p class="lead text-muted mx-auto" style="max-width: 600px;">
+                Suntem aici pentru a răspunde întrebărilor tale și pentru a-ți oferi suportul medical necesar.
+            </p>
+        </div>
+    </header>
+
+    <main class="container mb-5">
+        <div class="row g-4 align-items-stretch">
+            
+            <div class="col-lg-7">
+                <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border h-100">
+                    <h3 class="fw-bold text-dark mb-4">
+                        <i class="bi bi-envelope-fill text-primary me-2"></i> Trimite-ne un mesaj
+                    </h3>
+                    
+                    <form id="contactForm" class="needs-validation" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label fw-semibold text-dark">Nume complet</label>
+                                <input type="text" class="form-control" id="name" placeholder="Ex: Ion Popescu" required>
+                                <div class="invalid-feedback fw-medium">Acest câmp este obligatoriu.</div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="email" class="form-label fw-semibold text-dark">Adresă Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="nume@exemplu.md" required>
+                                <div class="invalid-feedback fw-medium">Acest câmp este obligatoriu.</div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <label for="phone" class="form-label fw-semibold text-dark">Număr de Telefon</label>
+                                <div class="input-group has-validation">
+                                    <span class="input-group-text bg-light text-muted border-end-0">+373</span>
+                                    <input type="tel" class="form-control rounded-end" id="phone" placeholder="69XXXXXX" required>
+                                    <div class="invalid-feedback fw-medium">Acest câmp este obligatoriu.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <label for="mesaj" class="form-label fw-semibold text-dark">Mesajul tău</label>
+                                <textarea class="form-control" id="mesaj" rows="4" placeholder="Cum te putem ajuta?" required></textarea>
+                                <div class="invalid-feedback fw-medium">Acest câmp este obligatoriu.</div>
+                            </div>
+                            
+                            <div class="col-12 mt-4">
+                                <button type="submit" class="btn btn-primary w-100 py-2.5 fw-bold rounded-pill shadow-sm text-white">
+                                    Trimite Mesajul <i class="bi bi-send-fill ms-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="card h-100 border-0 shadow-sm bg-primary text-white p-4 p-md-5 rounded-4 d-flex flex-column justify-content-between">
+                    <div>
+                        <h3 class="fw-bold mb-4 text-white">Informații de Contact</h3>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="fs-4 me-3 mt-1"><i class="bi bi-geo-alt-fill"></i></div>
+                            <div>
+                                <h5 class="fw-bold mb-1 text-white">IMSP Institutul de Cercetări Ştiinţifice </h5>
+                                <p class="mb-0 text-white-50">Strada Burebista 93, Chișinău</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="fs-4 me-3 mt-1"><i class="bi bi-telephone-fill"></i></div>
+                            <div>
+                                <h5 class="fw-bold mb-1 text-white">Call Center & Programări</h5>
+                                <p class="mb-0 text-white-50">+373 (22) 88-11-22</p>
+                                <p class="mb-0 text-white-50">Mobil: +373 79 000 111</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="fs-4 me-3 mt-1"><i class="bi bi-clock-fill"></i></div>
+                            <div>
+                                <h5 class="fw-bold mb-1 text-white">Program de lucru</h5>
+                                <p class="mb-0 text-white-50">Luni - Vineri: 08:00 - 20:00</p>
+                                <p class="mb-0 text-white-50">Sâmbătă: 09:00 - 15:00 | Duminică: Închis</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="border-top border-white-25 pt-4 mt-2">
+                            <div class="alert alert-danger bg-danger border-0 text-white d-flex align-items-center rounded-3 mb-4 py-3" role="alert">
+                                <i class="bi bi-exclamation-triangle-fill fs-4 me-3"></i>
+                                <div>
+                                    <strong>Urgențe Medicale?</strong> Apelați imediat numărul unic național <strong class="fs-5">112</strong>!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <h6 class="fw-bold text-uppercase mb-3 small" style="letter-spacing: 1px; color: rgba(255,255,255,0.8); font-size: 0.8rem;">Urmărește-ne online</h6>
+                            <div class="d-flex gap-3">
+                                <a href="https://facebook.com" target="_blank" class="text-white fs-4 social-link"><i class="bi bi-facebook"></i></a>
+                                <a href="https://instagram.com" target="_blank" class="text-white fs-4 social-link"><i class="bi bi-instagram"></i></a>
+                                <a href="https://linkedin.com" target="_blank" class="text-white fs-4 social-link"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+      <section class="mt-5 pt-4">
+    <h3 class="fw-bold text-dark text-center mb-4">
+        <i class="bi bi-map-fill text-primary me-2"></i> Localizare pe Hartă
+    </h3>
+    <div class="position-relative shadow-sm rounded-4 overflow-hidden border" style="height: 400px;">
+        <iframe 
+            width="100%" 
+            height="100%" 
+            frameborder="0" 
+            scrolling="no" 
+            marginheight="0" 
+            marginwidth="0" 
+            src="https://www.openstreetmap.org/export/embed.html?bbox=28.8780%2C46.9770%2C28.8980%2C46.9870&amp;layer=mapnik&amp;marker=46.9822%2C28.8882" 
+            style="border: 0;">
+        </iframe>
+
+        <div class="position-absolute bottom-0 end-0 m-3">
+            <a href="https://www.google.com/maps/search/?api=1&query=IMSP+Institutul+de+Cercetari+Stiintifice+in+Domeniul+Ocrotirii+Sanatatii+Mamei+si+Copilului+Burebista+93" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn btn-primary shadow fw-bold d-flex align-items-center gap-2">
+                <i class="bi bi-geo-alt-fill"></i> Deschide în Google Maps
+            </a>
+        </div>
+    </div>
+</section>
+
+        <section class="mt-5 pt-5 mx-auto" style="max-width: 850px;">
+            <h2 class="fw-bold text-dark text-center mb-2">Întrebări Frecvente (FAQ)</h2>
+            <p class="text-muted text-center mb-5">Răspunsuri rapide la cele mai comune întrebări ale pacienților noștri.</p>
+
+            <div class="accordion shadow-sm rounded-4 overflow-hidden border" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faqOne">
+                        <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFaqOne" aria-expanded="true" aria-controls="collapseFaqOne">
+                            Cum pot face o programare la clinică?
+                        </button>
+                    </h2>
+                    <div id="collapseFaqOne" class="accordion-collapse collapse show" aria-labelledby="faqOne" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-muted">
+                            Puteți face o programare rapidă direct de pe site-ul nostru completând formularul din pagina <a href="booking.html" class="text-decoration-none">Programează-te</a>, sau apelând serviciul nostru de Call Center la numărul <strong>+373 (22) 88-11-22</strong>.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faqTwo">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFaqTwo" aria-expanded="false" aria-controls="collapseFaqTwo">
+                            Sunt serviciile acoperite de CNAM (Polița de Asigurare)?
+                        </button>
+                    </h2>
+                    <div id="collapseFaqTwo" class="accordion-collapse collapse" aria-labelledby="faqTwo" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-muted">
+                            Da, Sănătate Plus are contracte încheiate cu Compania Națională de Asigurări în Medicină (CNAM) pentru anumite tipuri de servicii și investigații, cu bilet de trimitere de la medicul de familie. Vă rugăm să specificați acest lucru la înregistrare.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faqThree">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFaqThree" aria-expanded="false" aria-controls="collapseFaqThree">
+                            Cu cât timp înainte trebuie să ajung la programare?
+                        </button>
+                    </h2>
+                    <div id="collapseFaqThree" class="accordion-collapse collapse" aria-labelledby="faqThree" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-muted">
+                            Recomandăm pacienților să se prezinte la recepția clinicii cu aproximativ <strong>10-15 minute</strong> înainte de ora stabilită, pentru a putea completa fișa de înregistrare și formalitățile inițiale fără grabă.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="successToast" class="toast align-items-center text-white bg-success border-0 rounded-3 shadow" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <i class="bi bi-check-circle-fill me-2"></i> Mesajul tău a fost trimis! Te vom contacta în cel mai scurt timp.
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white pt-5 pb-3 mt-auto">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2026 Sănătate Plus. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+      <button id="backToTop" class="btn btn-primary position-fixed bottom-0 end-0 m-4 rounded-circle d-none shadow-lg d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; z-index: 1000; opacity: 0; transition: all 0.3s ease;">
+        <span class="fs-4 text-white fw-bold" style="line-height: 0; margin-top: -3px;">▲</span>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/validation.js"></script> 
+</body>
+</html>

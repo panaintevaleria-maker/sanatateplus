@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sănătate Plus - Programare Online</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">
+                <i class="bi bi-heart-pulse-fill"></i> Sănătate Plus
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Acasă</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Servicii</a></li>
+                    <li class="nav-item"><a class="nav-link" href="doctors.html">Medici</a></li>
+                    <li class="nav-item"><a class="nav-link" href="schedule.html">Orar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item mt-2 mt-lg-0">
+                        <a class="btn btn-primary text-white ms-lg-3 px-4 rounded-pill shadow-sm active" href="booking.html">Programează-te</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="row g-5">
+            
+            <div class="col-lg-7">
+                <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border">
+                    <h2 class="fw-bold text-dark mb-2">Programare Online</h2>
+                    <p class="text-muted mb-4">Completează formularul de mai jos pentru a solicita un loc disponibil.</p>
+                    
+                    <form id="bookingForm" class="needs-validation" novalidate>
+                        <div class="row g-3">
+                            
+                            <div class="col-12">
+                                <label for="nume" class="form-label fw-semibold">Nume și Prenume Pacient</label>
+                                <input type="text" class="form-control" id="nume" placeholder="Ex: Ion Popescu" required>
+                                <div class="invalid-feedback">Numele este obligatoriu pentru înregistrare.</div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="email" class="form-label fw-semibold">Adresă Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="pacient@exemplu.md" required>
+                                <div class="invalid-feedback">Introdu o adresă de email validă.</div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="telefon" class="form-label fw-semibold">Număr Telefon (Moldova)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light text-muted">+373</span>
+                                    <input type="tel" class="form-control" id="telefon" placeholder="69XXXXXX" pattern="[0-9]{8}" required>
+                                    <div class="invalid-feedback">Introdu un număr valid format din 8 cifre.</div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="specialitate" class="form-label fw-semibold">Specialitate Medicală</label>
+                                <select class="form-select" id="specialitate" required>
+                                    <option value="" selected disabled>Alege specialitatea...</option>
+                                    <option value="cardio">Cardiologie</option>
+                                    <option value="derma">Dermatologie</option>
+                                    <option value="orl">ORL</option>
+                                    <option value="pediatrie">Pediatrie</option>
+                                </select>
+                                <div class="invalid-feedback">Selectează o specialitate.</div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="medic" class="form-label fw-semibold">Medic Disponibil</label>
+                                <select class="form-select" id="medic" required disabled>
+                                    <option value="" selected disabled>Mai întâi alege specialitatea...</option>
+                                </select>
+                                <div class="invalid-feedback">Selectează un medic din listă.</div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="dataConsult" class="form-label fw-semibold">Data Solicitată</label>
+                                <input type="date" class="form-control" id="dataConsult" required>
+                                <div class="invalid-feedback">Te rugăm să alegi o dată validă (începând cu ziua de azi).</div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="oraConsult" class="form-label fw-semibold">Interval Orar Preferat</label>
+                                <select class="form-select" id="oraConsult" required>
+                                    <option value="" selected disabled>Alege intervalul...</option>
+                                    <option value="08:00">08:00 - 10:00</option>
+                                    <option value="10:00">10:00 - 12:00</option>
+                                    <option value="12:00">12:00 - 14:00</option>
+                                    <option value="14:00">14:00 - 16:00</option>
+                                    <option value="16:00">16:00 - 18:00</option>
+                                </select>
+                                <div class="invalid-feedback">Alege o opțiune de timp.</div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="simptome" class="form-label fw-semibold">Simptome / Mențiuni (Opțional)</label>
+                                <textarea class="form-control" id="simptome" rows="3" placeholder="Descrie pe scurt motivul vizitei sau detalii importante..."></textarea>
+                            </div>
+
+                            <div class="col-12 mt-4">
+                                <button type="submit" class="btn btn-primary w-100 py-3 fw-bold rounded-pill shadow-sm">
+                                    Trimite Cererea de Programare <i class="bi bi-calendar-check-fill ms-1"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border h-100">
+                    <h3 class="fw-bold text-dark mb-4"><i class="bi bi-info-circle-fill text-primary me-2"></i> Ghid de Pregătire</h3>
+                    <p class="text-muted">Pentru a asigura eficiența maximă a actului medical, vă rugăm să țineți cont de următoarele recomandări înainte de a veni la clinică:</p>
+                    
+                    <div class="mt-4">
+                        <div class="d-flex align-items-start mb-3">
+                            <div class="text-primary fs-4 me-3"><i class="bi bi-file-earmark-medical"></i></div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Acte necesare</h6>
+                                <p class="text-muted small mb-0">Prezentați buletinul de identitate la recepție. Dacă dețineți analize sau investigații recente, aduceți-le cu dumneavoastră.</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start mb-3">
+                            <div class="text-primary fs-4 me-3"><i class="bi bi-droplet-half"></i></div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Pregătire analize de sânge</h6>
+                                <p class="text-muted small mb-0">Dacă pachetul include analize de laborator, nu consumați alimente sau băuturi cu zahăr cu minimum 8-12 ore înainte.</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start mb-3">
+                            <div class="text-primary fs-4 me-3"><i class="bi bi-capsule-capsule"></i></div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Tratamente curente</h6>
+                                <p class="text-muted small mb-0">Nu întrerupeți medicamentele prescrise zilnic, dar menționați-le neapărat medicului în cadrul consultației.</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start">
+                            <div class="text-primary fs-4 me-3"><i class="bi bi-clock"></i></div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Sosiți la timp</h6>
+                                <p class="text-muted small mb-0">Vă rugăm să sosiți cu <strong>10-15 minute</strong> înainte de ora stabilită pentru îndeplinirea formalităților la recepție.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow rounded-4 overflow-hidden">
+                <div class="modal-header bg-success text-white py-3">
+                    <h5 class="modal-title fw-bold" id="confirmationModalLabel"><i class="bi bi-patch-check-fill me-2"></i> Cerere recepționată!</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center p-4">
+                    <div class="text-success fs-1 mb-3"><i class="bi bi-calendar2-check"></i></div>
+                    <h4 class="fw-bold mb-2">Vă mulțumim, <span id="summaryNume"></span>!</h4>
+                    <p class="text-muted mb-4">Solicitarea dumneavoastră a fost trimisă cu succes în sistemul registraturii.</p>
+                    
+                    <div class="bg-light p-3 rounded-3 text-start mb-4 small">
+                        <div class="mb-1"><strong>Specialitate:</strong> <span id="summarySpec"></span></div>
+                        <div class="mb-1"><strong>Medic selectat:</strong> <span id="summaryMedic"></span></div>
+                        <div><strong>Dată solicitată:</strong> <span id="summaryData"></span></div>
+                    </div>
+
+                    <p class="small text-secondary mb-0">Un operator al call-center-ului nostru vă va contacta telefonic pentru confirmarea finală a intervalului orar fix.</p>
+                </div>
+                <div class="modal-footer bg-light border-0 justify-content-center">
+                    <button type="button" class="btn btn-success px-4 rounded-pill" data-bs-dismiss="modal">Am înțeles</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-black text-white py-4 mt-auto">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2026 Sănătate Plus. Sănătatea ta, în mâini sigure..</p>
+        </div>
+    </footer >
+
+<button id="backToTop" class="btn btn-primary position-fixed bottom-0 end-0 m-4 rounded-circle d-none shadow-lg d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; z-index: 1000; opacity: 0; transition: all 0.3s ease;">
+        <span class="fs-4 text-white fw-bold" style="line-height: 0; margin-top: -3px;">▲</span>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>

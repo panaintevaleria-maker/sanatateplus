@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sănătate Plus - Echipa Medicală</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">
+                <i class="bi bi-heart-pulse-fill"></i> Sănătate Plus
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Acasă</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Servicii</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="doctors.html">Medici</a></li>
+                    <li class="nav-item"><a class="nav-link" href="schedule.html">Orar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item mt-2 mt-lg-0">
+                        <a class="btn btn-primary text-white ms-lg-3 px-4 rounded-pill shadow-sm" href="booking.html">Programează-te</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-white py-5 border-bottom mb-5">
+        <div class="container text-center py-2">
+            <h1 class="fw-bold text-dark">Echipa Noastră de Medici</h1>
+            <p class="lead text-muted mx-auto" style="max-width: 700px;">
+                Fă cunoștință cu cei 8 specialiști gata să te ajute. Profesioniști buni, blânzi și atenți la detalii.
+            </p>
+        </div>
+    </header>
+
+    <main class="container mb-5 flex-grow-1">
+        
+        <section class="row mb-5 justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="input-group shadow-sm rounded-pill overflow-hidden border bg-white">
+                    <span class="input-group-text bg-white border-0 ps-3">
+                        <i class="bi bi-search text-primary"></i>
+                    </span>
+                    <input type="text" id="doctorSearch" class="form-control border-0 py-2.5" placeholder="Caută după nume sau specialitate...">
+                </div>
+            </div>
+        </section>
+
+        <div class="row g-4" id="doctorsGrid">
+            
+            <div class="col-md-6 col-lg-3 doctor-card">
+                <div class="card h-100 border-0 shadow-sm overflow-hidden rounded-4 text-center p-4">
+                    <img src="img/dc8.jpg" alt="Dr. Andrei Mureșan" class="mx-auto mb-3 rounded-circle object-fit-cover" style="width: 120px; height: 120px; border: 3px solid #0d6efd;">
+                    <h5 class="fw-bold text-dark mb-1">Dr. Andrei Mureșan</h5>
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-1.5 mx-auto mb-3">1. Cardiologie (Inimă)</span>
+                    
+                    <div class="text-muted small mb-3">
+                        <p class="mb-1"><strong>Pregătire:</strong> Doctor în Științe Medicale, absolvent USMF.</p>
+                        <p class="mb-0"><strong>Stagii:</strong> Specializări clinice în Austria și România.</p>
+                    </div>
+                    
+                    <div class="mt-auto border-top pt-3">
+                        <div class="text-warning small mb-2">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                            <span class="text-muted fw-bold ms-1">4.8</span>
+                        </div>
+                        <a href="schedule.html" class="btn btn-sm btn-outline-primary rounded-pill w-100">Vezi Orar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 doctor-card">
+                <div class="card h-100 border-0 shadow-sm overflow-hidden rounded-4 text-center p-4">
+                    <img src="img/dc1.jpg" alt="Dr. Camelia Nuță" class="mx-auto mb-3 rounded-circle object-fit-cover" style="width: 120px; height: 120px; border: 3px solid #0d6efd;">
+                    <h5 class="fw-bold text-dark mb-1">Dr. Camelia Nuță</h5>
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-1.5 mx-auto mb-3">2. Dermatologie (Piele)</span>
+                    
+                    <div class="text-muted small mb-3">
+                        <p class="mb-1"><strong>Pregătire:</strong> Rezidențiat în Dermatovenerologie.</p>
+                        <p class="mb-0"><strong>Membru:</strong> Academia Europeană de Dermatologie (EADV).</p>
+                    </div>
+                    
+                    <div class="mt-auto border-top pt-3">
+                        <div class="text-warning small mb-2">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            <span class="text-muted fw-bold ms-1">5.0</span>
+                        </div>
+                        <a href="schedule.html" class="btn btn-sm btn-outline-primary rounded-pill w-100">Vezi Orar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 doctor-card">
+                <div class="card h-100 border-0 shadow-sm overflow-hidden rounded-4 text-center p-4">
+                    <img src="img/dc7.jpg" alt="Dr. Sorin Ionel" class="mx-auto mb-3 rounded-circle object-fit-cover" style="width: 120px; height: 120px; border: 3px solid #0d6efd;">
+                    <h5 class="fw-bold text-dark mb-1">Dr. Sorin Ionel</h5>
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-1.5 mx-auto mb-3">3. ORL (Gât, Nas, Urechi)</span>
+                    
+                    <div class="text-muted small mb-3">
+                        <p class="mb-1"><strong>Pregătire:</strong> Expert în chirurgie endoscopică minim-invazivă.</p>
+                        <p class="mb-0"><strong>Membru:</strong> Societatea Europeană de Rinologie.</p>
+                    </div>
+                    
+                    <div class="mt-auto border-top pt-3">
+                        <div class="text-warning small mb-2">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                            <span class="text-muted fw-bold ms-1">4.9</span>
+                        </div>
+                        <a href="schedule.html" class="btn btn-sm btn-outline-primary rounded-pill w-100">Vezi Orar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 doctor-card">
+                <div class="card h-100 border-0 shadow-sm overflow-hidden rounded-4 text-center p-4">
+                    <img src="img/dc2.jpg" alt="Dr. Elena Vasilescu" class="mx-auto mb-3 rounded-circle object-fit-cover" style="width: 120px; height: 120px; border: 3px solid #0d6efd;">
+                    <h5 class="fw-bold text-dark mb-1">Dr. Elena Vasilescu</h5>
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-1.5 mx-auto mb-3">4. Pediatrie (Copii)</span>
+                    
+                    <div class="text-muted small mb-3">
+                        <p class="mb-1"><strong>Pregătire:</strong> Medic pediatru cu categorie superioară.</p>
+                        <p class="mb-0"><strong>Experiență:</strong> Peste 15 ani de practică blândă cu copii.</p>
+                    </div>
+                    
+                    <div class="mt-auto border-top pt-3">
+                        <div class="text-warning small mb-2">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                            <span class="text-muted fw-bold ms-1">4.7</span>
+                        </div>
+                        <a href="schedule.html" class="btn btn-sm btn-outline-primary rounded-pill w-100">Vezi Orar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 doctor-card">
+                <div class="card h-100 border-0 shadow-sm overflow-hidden rounded-4 text-center p-4">
+                    <img src="img/dc5.jpg" alt="Dr. Radu Popescu" class="mx-auto mb-3 rounded-circle object-fit-cover" style="width: 120px; height: 120px; border: 3px solid #0d6efd;">
+                    <h5 class="fw-bold text-dark mb-1">Dr. Radu Popescu</h5>
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-1.5 mx-auto mb-3">5. Neurologie</span>
+                    
+                    <div class="text-muted small mb-3">
+                        <p class="mb-1"><strong>Pregătire:</strong> Specialist în boli ale sistemului nervos central.</p>
+                        <p class="mb-0"><strong>Focus:</strong> Diagnostic migrene, amețeli și dureri de spate.</p>
+                    </div>
+                    
+                    <div class="mt-auto border-top pt-3">
+                        <div class="text-warning small mb-2">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                            <span class="text-muted fw-bold ms-1">4.2</span>
+                        </div>
+                        <a href="schedule.html" class="btn btn-sm btn-outline-primary rounded-pill w-100">Vezi Orar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 doctor-card">
+                <div class="card h-100 border-0 shadow-sm overflow-hidden rounded-4 text-center p-4">
+                    <img src="img/dc3.jpg" alt="Dr. Diana Groza" class="mx-auto mb-3 rounded-circle object-fit-cover" style="width: 120px; height: 120px; border: 3px solid #0d6efd;">
+                    <h5 class="fw-bold text-dark mb-1">Dr. Diana Groza</h5>
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-1.5 mx-auto mb-3">6. Endocrinologie</span>
+                    
+                    <div class="text-muted small mb-3">
+                        <p class="mb-1"><strong>Pregătire:</strong> Medic specialist cu competență în ecografie tiroidiană.</p>
+                        <p class="mb-0"><strong>Stagii:</strong> Specializări clinice internaționale în Franța.</p>
+                    </div>
+                    
+                    <div class="mt-auto border-top pt-3">
+                        <div class="text-warning small mb-2">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            <span class="text-muted fw-bold ms-1">4.9</span>
+                        </div>
+                        <a href="schedule.html" class="btn btn-sm btn-outline-primary rounded-pill w-100">Vezi Orar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 doctor-card">
+                <div class="card h-100 border-0 shadow-sm overflow-hidden rounded-4 text-center p-4">
+                    <img src="img/dc6.jpg" alt="Dr. Mihai Avram" class="mx-auto mb-3 rounded-circle object-fit-cover" style="width: 120px; height: 120px; border: 3px solid #0d6efd;">
+                    <h5 class="fw-bold text-dark mb-1">Dr. Mihai Avram</h5>
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-1.5 mx-auto mb-3">7. Ecografie Generală</span>
+                    
+                    <div class="text-muted small mb-3">
+                        <p class="mb-1"><strong>Pregătire:</strong> Medic Imagist cu înaltă calificare în ecografie.</p>
+                        <p class="mb-0"><strong>Focus:</strong> Scanări complete burtă (abdomen) și ecografii Doppler.</p>
+                    </div>
+                    
+                    <div class="mt-auto border-top pt-3">
+                        <div class="text-warning small mb-2">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            <span class="text-muted fw-bold ms-1">5.0</span>
+                        </div>
+                        <a href="schedule.html" class="btn btn-sm btn-outline-primary rounded-pill w-100">Vezi Orar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 doctor-card">
+                <div class="card h-100 border-0 shadow-sm overflow-hidden rounded-4 text-center p-4">
+                    <img src="img/dc4.jpg" alt="Dr. Laura Stancu" class="mx-auto mb-3 rounded-circle object-fit-cover" style="width: 120px; height: 120px; border: 3px solid #0d6efd;">
+                    <h5 class="fw-bold text-dark mb-1">Dr. Laura Stancu</h5>
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-1.5 mx-auto mb-3">8. Alergologie</span>
+                    
+                    <div class="text-muted small mb-3">
+                        <p class="mb-1"><strong>Pregătire:</strong> Specialist în Alergologie și Imunologie Clinică.</p>
+                        <p class="mb-0"><strong>Focus:</strong> Diagnostic rapid alergii alimentare, praf și polen.</p>
+                    </div>
+                    
+                    <div class="mt-auto border-top pt-3">
+                        <div class="text-warning small mb-2">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                            <span class="text-muted fw-bold ms-1">4.6</span>
+                        </div>
+                        <a href="schedule.html" class="btn btn-sm btn-outline-primary rounded-pill w-100">Vezi Orar</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-auto">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Sănătate Plus. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('doctorSearch');
+            
+            searchInput.addEventListener('keyup', function() {
+                const query = this.value.toLowerCase();
+                const cards = document.querySelectorAll('.doctor-card');
+                
+                cards.forEach(card => {
+                    const cardContent = card.textContent.toLowerCase();
+                    if (cardContent.includes(query)) {
+                        card.style.display = "";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
+    <button id="backToTop" class="btn btn-primary position-fixed bottom-0 end-0 m-4 rounded-circle d-none shadow-lg d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; z-index: 1000; opacity: 0; transition: all 0.3s ease;">
+        <span class="fs-4 text-white fw-bold" style="line-height: 0; margin-top: -3px;">▲</span>
+    </button>
+   <script src="js/main.js"></script>
+    
+    <script src="js/doctors.js"></script>
+</body>
+</html>

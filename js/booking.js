@@ -1,0 +1,107 @@
+
+const bookingDoctors = [
+    { id: "dc1", name: "Dr. Andrei Mureșan", specialty: "cardiologie" },
+    { id: "dc2", name: "Dr. Camelia Nuță", specialty: "dermatologie" },
+    { id: "dc3", name: "Dr. Radu Popescu", specialty: "neurologie" },
+    { id: "dc4", name: "Dr. Sorin Ionel", specialty: "orl" },
+    { id: "dc5", name: "Dr. Diana Groza", specialty: "endocrinologie" },
+    { id: "dc6", name: "Dr. Elena Vasilescu", specialty: "pediatrie" },
+    { id: "dc7", name: "Dr. Mihai Avram", specialty: "imagistica" },
+    { id: "dc8", name: "Dr. Laura Stancu", specialty: "alergologie" }
+];
+
+document.addEventListener("DOMContentLoaded", function () {
+    const specialtySelect = document.getElementById("bookingSpecialty");
+    const doctorSelect = document.getElementById("bookingDoctor");
+    const bookingForm = document.getElementById("bookingForm");
+
+    if (specialtySelect && doctorSelect) {
+        // Schimbarea medicilor în funcție de specialitate
+        specialtySelect.addEventListener("change", function () {
+            const selectedSpecialty = this.value;
+            updateDoctorsDropdown(selectedSpecialty, doctorSelect);
+        });
+    }
+
+    if (bookingForm) {
+        // Finalizarea programării cu mesaj de confirmare
+        bookingForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            handleBookingSubmit(this);
+        });
+    }
+});
+
+// Filtrează dropdown-ul de medici pe baza specialității alese
+function updateDoctorsDropdown(specialty, doctorDropdown) {
+    // Resetăm dropdown-ul de medici
+    doctorDropdown.innerHTML = '<option value="" selected disabled>Alege medicul...</option>';
+    
+    if (!specialty) {
+        doctorDropdown.disabled = true;
+        return;
+    }
+
+    // Filtrăm lista de medici
+    const filteredDoctors = bookingDoctors.filter(doc => doc.specialty === specialty);
+
+    // Adăugăm medicii potriviți în listă
+    filteredDoctors.forEach(doc => {
+        const option = document.createElement("option");
+        option.value = doc.id;
+        option.textContent = doc.name;
+        doctorDropdown.appendChild(option);
+    });
+
+    // Activăm dropdown-ul dacă avem medici disponibili
+    doctorDropdown.disabled = filteredDoctors.length === 0;
+}
+
+// Procesarea trimiterii formularului de rezervare
+function handleBookingSubmit(form) {
+    const patientName = document.getElementById("patientName").value;
+    const bookingDate = document.getElementById("bookingDate").value;
+    const bookingTime = document.getElementById("bookingTime").value;
+    const doctorName = document.getElementById("bookingDoctor").options[document.getElementById("bookingDoctor").selectedIndex].text;
+
+    const container = form.parentElement;
+
+    // Generăm un cod de rezervare aleatoriu (Ex: SP-8492)
+    const bookingCode = "SP-" + Math.floor(1000 + Math.random() * 9000);
+
+    // Înlocuim formularul cu un ecran de succes/bilet de confirmare
+    container.innerHTML = `
+        <div class="card border-0 shadow text-center p-5 animate__animated animate__fadeIn">
+            <div class="mb-4 text-success">
+                <i class="bi bi-calendar-check-fill" style="font-size: 4rem;"></i>
+            </div>
+            <h3 class="fw-bold text-dark mb-2">Programare Confirmată!</h3>
+            <p class="text-muted">Vă mulțumim, <strong>${patientName}</strong>. Solicitarea dumneavoastră a fost procesată cu succes.</p>
+            
+            <div class="bg-light p-4 rounded-3 text-start mx-auto my-4 border" style="max-width: 450px;">
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-secondary">Cod Programare:</span>
+                    <strong class="text-primary">${bookingCode}</strong>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-secondary">Medic:</span>
+                    <strong class="text-dark">${doctorName}</strong>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-secondary">Data:</span>
+                    <strong class="text-dark">${bookingDate}</strong>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <span class="text-secondary">Ora:</span>
+                    <strong class="text-dark">${bookingTime}</strong>
+                </div>
+            </div>
+
+            <p class="small text-muted"><i class="bi bi-info-circle"></i> Un SMS și un e-mail cu detaliile vizitei au fost trimise automat.</p>
+            <div class="mt-2">
+                <a href="index.html" class="btn btn-outline-primary rounded-pill px-4 me-2">Acasă</a>
+                <button onclick="window.print()" class="btn btn-primary rounded-pill px-4"><i class="bi bi-printer"></i> Printează biletul</button>
+            </div>
+        </div>
+    `;
+}

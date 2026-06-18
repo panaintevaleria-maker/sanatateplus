@@ -1,0 +1,220 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght=400;500;600;700&family=Roboto:wght=300;400;500;700&display=swap');
+
+:root {
+    --primary-medical: #0288D1;   /* Albastru medical */
+    --accent-health: #00897B;    /* Verde sănătate */
+    --neutral-dark: #212121;     /* Text principal / Neutru închis */
+    --neutral-light: #F5F5F5;    /* Fundaluri / Neutru deschis */
+    --white: #FFFFFF;
+    
+    --font-titles: 'Poppins', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--neutral-dark);
+    background-color: var(--white);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-titles);
+    color: var(--neutral-dark);
+    font-weight: 600;
+}
+
+.text-primary {
+    color: var(--primary-medical) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-medical) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-medical);
+    border-color: var(--primary-medical);
+    font-family: var(--font-titles);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #0277BD !important;
+    border-color: #0277BD !important;
+}
+
+.text-accent {
+    color: var(--accent-health) !important;
+}
+
+.bg-accent {
+    background-color: var(--accent-health) !important;
+}
+
+.navbar {
+    border-bottom: 2px solid var(--neutral-light);
+    background-color: var(--white) !important;
+}
+
+.navbar-nav .nav-link {
+    font-family: var(--font-titles);
+    font-weight: 600;                 /* Boldat */
+    color: #000000 !important;        /* Negru complet */
+    padding: 0.5rem 1rem;
+    transition: color 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-medical) !important;
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--accent-health) !important;
+    border-bottom: 2px solid var(--accent-health);
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--neutral-light);
+    color: var(--primary-medical);
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    border-color: var(--primary-medical);
+    box-shadow: 0 0 0 0.25rem rgba(2, 136, 209, 0.25);
+}
+
+.img-optimized {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.social-link, .hover-opacity {
+    transition: all 0.2s ease;
+}
+
+.social-link:hover, .hover-opacity:hover {
+    transform: translateY(-3px);
+    color: var(--accent-health) !important;
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    will-change: transform;
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+
+.status-dot {
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.bg-available { background-color: #198754; }
+.bg-limited   { background-color: #ffc107; }
+.bg-busy      { background-color: #dc3545; }
+
+.nav-tabs .nav-link {
+    color: var(--neutral-dark);
+    border: 1px solid transparent;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: var(--primary-medical) !important;
+    color: var(--white) !important;
+    border-color: var(--primary-medical) !important;
+}
+
+.nav-tabs .nav-link:hover:not(.active) {
+    background-color: var(--neutral-light);
+    border-color: transparent;
+}
+
+.rating-stars {
+    color: #ffc107;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+.zona-detalii-specialitate {
+    animation: fluidFadeIn 0.4s ease-in-out;
+}
+
+@keyframes fluidFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.filter-btn {
+    transition: all 0.25s ease;
+    font-family: var(--font-titles);
+    font-weight: 500;
+}
+
+
+/* 1. Mobil (<768px) */
+@media (max-width: 767.98px) {
+    body {
+        font-size: 14px;
+    }
+    .navbar-nav {
+        padding: 1rem 0;
+    }
+    .navbar-nav .nav-link.active {
+        border-bottom: none;
+        border-left: 3px solid var(--accent-health);
+        padding-left: 10px;
+    }
+    .py-5 {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+    }
+        #coloana-detalii .border-end {
+        border-right: none !important;
+        border-bottom: 1px solid #dee2e6 !important;
+        padding-bottom: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+}
+
+/* 2. Tabletă (768px - 1199.98px) */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    body {
+        font-size: 15px;
+    }
+    
+    #coloana-detalii .border-end {
+        border-right: none !important;
+        border-bottom: 1px solid #dee2e6 !important;
+        padding-bottom: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+}
+
+/* 3. Desktop (≥1200px) */
+@media (min-width: 1200px) {
+    body {
+        font-size: 16px;
+    }
+}
