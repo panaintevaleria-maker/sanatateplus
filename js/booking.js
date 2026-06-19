@@ -1,4 +1,3 @@
-
 const bookingDoctors = [
     { id: "dc1", name: "Dr. Andrei Mureșan", specialty: "cardiologie" },
     { id: "dc2", name: "Dr. Camelia Nuță", specialty: "dermatologie" },
@@ -26,8 +25,15 @@ document.addEventListener("DOMContentLoaded", function () {
     if (bookingForm) {
         // Finalizarea programării cu mesaj de confirmare
         bookingForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-            handleBookingSubmit(this);
+            e.preventDefault(); // Oprim trimiterea standard (refresh-ul)
+            
+            // Verificăm dacă formularul este valid (toate câmpurile obligatorii sunt completate corect)
+            if (!this.checkValidity()) {
+                e.stopPropagation();
+                this.classList.add('was-validated'); // Afișează erorile vizuale de la Bootstrap (câmpuri roșii)
+            } else {
+                handleBookingSubmit(this); // Generează biletul de succes doar dacă totul e în regulă
+            }
         });
     }
 });
@@ -62,7 +68,10 @@ function handleBookingSubmit(form) {
     const patientName = document.getElementById("patientName").value;
     const bookingDate = document.getElementById("bookingDate").value;
     const bookingTime = document.getElementById("bookingTime").value;
-    const doctorName = document.getElementById("bookingDoctor").options[document.getElementById("bookingDoctor").selectedIndex].text;
+    
+    // Preluăm textul selectat în siguranță pentru a evita erorile în consolă
+    const doctorSelect = document.getElementById("bookingDoctor");
+    const doctorName = doctorSelect.options[doctorSelect.selectedIndex] ? doctorSelect.options[doctorSelect.selectedIndex].text : "Nespecificat";
 
     const container = form.parentElement;
 
