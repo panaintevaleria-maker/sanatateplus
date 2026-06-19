@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     
     const dateInput = document.getElementById('bookingDate') || document.querySelector('input[type="date"]');
@@ -49,10 +48,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const phoneInput = form.querySelector('input[type="tel"]') || form.querySelector('#phone');
             if (phoneInput && phoneInput.value.trim()) {
-          
-                const phoneRegex = /^(\+?\d{1,3})?[-.\s]?\d{10}$/; 
-                if (!phoneRegex.test(phoneInput.value.replace(/\s+/g, ''))) {
-                    showError(phoneInput, "Introdu un număr de telefon valid format din cel puțin 10 cifre.");
+                const curatat = phoneInput.value.replace(/\s+/g, '');
+                const phoneRegex = /^\d{8}$/; 
+                
+                if (!phoneRegex.test(curatat)) {
+                    showError(phoneInput, "Introdu un număr de telefon valid format din 8 cifre.");
                 }
             }
 
@@ -60,8 +60,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 event.preventDefault();
                 event.stopPropagation();
             } else {
-              form.classList.add('was-validated');
+                event.preventDefault(); 
+                
+                form.classList.add('was-validated');
+                
+                alert("Solicitarea a fost transmisă cu succes! Vă mulțumim!");
+                
+                form.reset();
+                form.classList.remove('was-validated');
             }
+            // -----------------------------------------------------
         });
     });
 });
