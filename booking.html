@@ -45,8 +45,8 @@
                         <div class="row g-3">
                             
                             <div class="col-12">
-                                <label for="nume" class="form-label fw-semibold">Nume și Prenume Pacient</label>
-                                <input type="text" class="form-control" id="nume" placeholder="Ex: Ion Popescu" required>
+                                <label for="patientName" class="form-label fw-semibold">Nume și Prenume Pacient</label>
+                                <input type="text" class="form-control" id="patientName" placeholder="Ex: Ion Popescu" required>
                                 <div class="invalid-feedback">Numele este obligatoriu pentru înregistrare.</div>
                             </div>
 
@@ -66,40 +66,44 @@
                             </div>
 
                             <div class="col-md-6">
-                                <label for="specialitate" class="form-label fw-semibold">Specialitate Medicală</label>
-                                <select class="form-select" id="specialitate" required>
+                                <label for="bookingSpecialty" class="form-label fw-semibold">Specialitate Medicală</label>
+                                <select class="form-select" id="bookingSpecialty" required>
                                     <option value="" selected disabled>Alege specialitatea...</option>
-                                    <option value="cardio">Cardiologie</option>
-                                    <option value="derma">Dermatologie</option>
+                                    <option value="cardiologie">Cardiologie</option>
+                                    <option value="dermatologie">Dermatologie</option>
+                                    <option value="neurologie">Neurologie</option>
                                     <option value="orl">ORL</option>
+                                    <option value="endocrinologie">Endocrinologie</option>
                                     <option value="pediatrie">Pediatrie</option>
+                                    <option value="imagistica">Ecografie / Imagistică</option>
+                                    <option value="alergologie">Alergologie</option>
                                 </select>
                                 <div class="invalid-feedback">Selectează o specialitate.</div>
                             </div>
 
                             <div class="col-md-6">
-                                <label for="medic" class="form-label fw-semibold">Medic Disponibil</label>
-                                <select class="form-select" id="medic" required disabled>
+                                <label for="bookingDoctor" class="form-label fw-semibold">Medic Disponibil</label>
+                                <select class="form-select" id="bookingDoctor" required disabled>
                                     <option value="" selected disabled>Mai întâi alege specialitatea...</option>
                                 </select>
                                 <div class="invalid-feedback">Selectează un medic din listă.</div>
                             </div>
 
                             <div class="col-md-6">
-                                <label for="dataConsult" class="form-label fw-semibold">Data Solicitată</label>
-                                <input type="date" class="form-control" id="dataConsult" required>
-                                <div class="invalid-feedback">Te rugăm să alegi o dată validă (începând cu ziua de azi).</div>
+                                <label for="bookingDate" class="form-label fw-semibold">Data Solicitată</label>
+                                <input type="date" class="form-control" id="bookingDate" required>
+                                <div class="invalid-feedback">Te rugăm să alegi o dată validă.</div>
                             </div>
 
                             <div class="col-md-6">
-                                <label for="oraConsult" class="form-label fw-semibold">Interval Orar Preferat</label>
-                                <select class="form-select" id="oraConsult" required>
+                                <label for="bookingTime" class="form-label fw-semibold">Interval Orar Preferat</label>
+                                <select class="form-select" id="bookingTime" required>
                                     <option value="" selected disabled>Alege intervalul...</option>
-                                    <option value="08:00">08:00 - 10:00</option>
-                                    <option value="10:00">10:00 - 12:00</option>
-                                    <option value="12:00">12:00 - 14:00</option>
-                                    <option value="14:00">14:00 - 16:00</option>
-                                    <option value="16:00">16:00 - 18:00</option>
+                                    <option value="08:00 - 10:00">08:00 - 10:00</option>
+                                    <option value="10:00 - 12:00">10:00 - 12:00</option>
+                                    <option value="12:00 - 14:00">12:00 - 14:00</option>
+                                    <option value="14:00 - 16:00">14:00 - 16:00</option>
+                                    <option value="16:00 - 18:00">16:00 - 18:00</option>
                                 </select>
                                 <div class="invalid-feedback">Alege o opțiune de timp.</div>
                             </div>
@@ -193,11 +197,11 @@
 
     <footer class="bg-black text-white py-4 mt-auto">
         <div class="container text-center">
-            <p class="mb-0">&copy; 2026 Sănătate Plus. Sănătatea ta, în mâini sigure..</p>
+            <p class="mb-0">&copy; 2026 Sănătate Plus. Sănătatea ta, în mâini sigure.</p>
         </div>
-    </footer >
+    </footer>
 
-<button id="backToTop" class="btn btn-primary position-fixed bottom-0 end-0 m-4 rounded-circle d-none shadow-lg d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; z-index: 1000; opacity: 0; transition: all 0.3s ease;">
+    <button id="backToTop" class="btn btn-primary position-fixed bottom-0 end-0 m-4 rounded-circle d-none shadow-lg d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; z-index: 1000; opacity: 0; transition: all 0.3s ease;">
         <span class="fs-4 text-white fw-bold" style="line-height: 0; margin-top: -3px;">▲</span>
     </button>
 
