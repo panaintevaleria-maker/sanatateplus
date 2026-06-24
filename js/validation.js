@@ -12,15 +12,18 @@ document.addEventListener('DOMContentLoaded', function() {
         dateInput.setAttribute('min', minDate);
     }
 
+    // Identifică și selectează toate formularele ce necesită validare la trimitere.
     const forms = document.querySelectorAll('.needs-validation, #bookingForm, #contactForm');
 
     forms.forEach(form => {
         form.addEventListener('submit', function(event) {
             let isValid = true;
 
+            // Resetează stările și șterge mesajele de eroare  din încercările anterioare.
             form.querySelectorAll('.invalid-feedback').forEach(el => el.remove());
             form.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
 
+            // Definește o funcție reutilizabilă pentru injectarea mesajelor de avertizare în interfață.
             const showError = (input, message) => {
                 isValid = false;
                 input.classList.add('is-invalid');
@@ -31,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 input.parentNode.appendChild(errorDiv);
             };
 
+            // Verifică dacă utilizatorul a lăsat necompletate câmpurile marcate drept obligatorii.
             const requiredFields = form.querySelectorAll('[required]');
             requiredFields.forEach(field => {
                 if (!field.value.trim()) {
@@ -38,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
+            // Analizează structura sintactică a adresei de email folosind o expresie regulată.
             const emailInput = form.querySelector('input[type="email"]');
             if (emailInput && emailInput.value.trim()) {
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -46,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
 
+            //  Validează numărul de telefon eliminând spațiile și impunând lungimea de 8 cifre.
             const phoneInput = form.querySelector('input[type="tel"]') || form.querySelector('#phone');
             if (phoneInput && phoneInput.value.trim()) {
                 const curatat = phoneInput.value.replace(/\s+/g, '');
@@ -56,20 +62,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
 
+            //  Blochează expedierea dacă există erori, altfel confirmă succesul și resetează formularul.
             if (!isValid) {
                 event.preventDefault();
                 event.stopPropagation();
             } else {
                 event.preventDefault(); 
-                
                 form.classList.add('was-validated');
-                
                 alert("Solicitarea a fost transmisă cu succes! Vă mulțumim!");
-                
                 form.reset();
                 form.classList.remove('was-validated');
             }
-            // -----------------------------------------------------
         });
     });
 });
