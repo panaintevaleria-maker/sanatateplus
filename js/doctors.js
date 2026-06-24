@@ -1,23 +1,23 @@
 
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Selectăm câmpul de căutare prin ID-ul său din HTML
+    // Selectează câmpul de text pentru căutare folosind ID-ul său din HTML
     const searchInput = document.getElementById('doctorSearch');
     
     if (!searchInput) return;
 
     searchInput.addEventListener('keyup', function() {
-        // Preluăm textul căutat și îl transformăm în litere mici pentru o căutare corectă
+        // Extrage textul introdus, îl transformă în litere mici și elimină spațiile inutile de la început și sfârșit
         const query = this.value.toLowerCase().trim();
         
-        // Selectăm toate cardurile care au clasa '.doctor-card'
+        // Selectează toate cardurile de medici prezente pe ecran
         const cards = document.querySelectorAll('.doctor-card');
         
+
         cards.forEach(card => {
-            // Preluăm tot textul din interiorul cardului 
+            // Extrage tot textul vizibil din card (nume, specialitate, etc.) și îl transformă în litere mici
             const cardContent = card.textContent.toLowerCase();
             
-            // Dacă textul căutat se află în interiorul cardului, îl afișăm, altfel îl ascundem
+            // Verifică dacă textul din card conține cuvântul sau literele căutate
             if (cardContent.includes(query)) {
                 
                 card.style.display = "";
