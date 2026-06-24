@@ -1,3 +1,4 @@
+
 const bookingDoctors = [
     { id: "dc1", name: "Dr. Andrei Mureșan", specialty: "cardiologie" },
     { id: "dc2", name: "Dr. Camelia Nuță", specialty: "dermatologie" },
@@ -10,75 +11,70 @@ const bookingDoctors = [
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Selectarea elementelor cheie din formular folosind ID-urile lor din HTML
     const specialtySelect = document.getElementById("bookingSpecialty");
     const doctorSelect = document.getElementById("bookingDoctor");
     const bookingForm = document.getElementById("bookingForm");
 
+    // Secvență pentru actualizarea listei de medici la schimbarea specialității
     if (specialtySelect && doctorSelect) {
-        // Schimbarea medicilor în funcție de specialitate
         specialtySelect.addEventListener("change", function () {
-            const selectedSpecialty = this.value;
-            updateDoctorsDropdown(selectedSpecialty, doctorSelect);
+            const selectedSpecialty = this.value; 
+            updateDoctorsDropdown(selectedSpecialty, doctorSelect); 
         });
     }
 
+    // Secvență pentru gestionarea trimiterii formularului (Submit) și validarea acestuia
     if (bookingForm) {
-        // Finalizarea programării cu mesaj de confirmare
         bookingForm.addEventListener("submit", function (e) {
-            e.preventDefault(); // Oprim trimiterea standard (refresh-ul)
+            e.preventDefault(); 
             
-            // Verificăm dacă formularul este valid (toate câmpurile obligatorii sunt completate corect)
+            // Verifică dacă toate câmpurile obligatorii din HTML5 sunt completate corect
             if (!this.checkValidity()) {
-                e.stopPropagation();
-                this.classList.add('was-validated'); // Afișează erorile vizuale de la Bootstrap (câmpuri roșii)
+                e.stopPropagation(); 
+                this.classList.add('was-validated'); 
             } else {
-                handleBookingSubmit(this); // Generează biletul de succes doar dacă totul e în regulă
+                handleBookingSubmit(this);
             }
         });
     }
 });
-
-// Filtrează dropdown-ul de medici pe baza specialității alese
 function updateDoctorsDropdown(specialty, doctorDropdown) {
-    // Resetăm dropdown-ul de medici
+    // Resetează lista de medici și adaugă opțiunea implicită dezactivată
     doctorDropdown.innerHTML = '<option value="" selected disabled>Alege medicul...</option>';
     
+    // Dacă utilizatorul a resetat câmpul sau nu a ales nicio specialitate, blochează lista de medici
     if (!specialty) {
         doctorDropdown.disabled = true;
         return;
     }
-
-    // Filtrăm lista de medici
     const filteredDoctors = bookingDoctors.filter(doc => doc.specialty === specialty);
 
-    // Adăugăm medicii potriviți în listă
     filteredDoctors.forEach(doc => {
         const option = document.createElement("option");
-        option.value = doc.id;
-        option.textContent = doc.name;
+        option.value = doc.id;         
+        option.textContent = doc.name;   
         doctorDropdown.appendChild(option);
     });
 
-    // Activăm dropdown-ul dacă avem medici disponibili
     doctorDropdown.disabled = filteredDoctors.length === 0;
 }
 
-// Procesarea trimiterii formularului de rezervare
+
 function handleBookingSubmit(form) {
     const patientName = document.getElementById("patientName").value;
     const bookingDate = document.getElementById("bookingDate").value;
     const bookingTime = document.getElementById("bookingTime").value;
     
-    // Preluăm textul selectat în siguranță pentru a evita erorile în consolă
     const doctorSelect = document.getElementById("bookingDoctor");
     const doctorName = doctorSelect.options[doctorSelect.selectedIndex] ? doctorSelect.options[doctorSelect.selectedIndex].text : "Nespecificat";
 
     const container = form.parentElement;
 
-    // Generăm un cod de rezervare aleatoriu (Ex: SP-8492)
+    // Generarea unui cod aleatoriu de programare (ex: SP-4829) format din litere și 4 cifre
     const bookingCode = "SP-" + Math.floor(1000 + Math.random() * 9000);
 
-    // Înlocuim formularul cu un ecran de succes/bilet de confirmare
+    // Înlocuirea completă a codului HTML din container cu șablonul biletului de confirmare
     container.innerHTML = `
         <div class="card border-0 shadow text-center p-5 animate__animated animate__fadeIn">
             <div class="mb-4 text-success">
@@ -107,6 +103,7 @@ function handleBookingSubmit(form) {
             </div>
 
             <p class="small text-muted"><i class="bi bi-info-circle"></i> Un SMS și un e-mail cu detaliile vizitei au fost trimise automat.</p>
+            
             <div class="mt-2">
                 <a href="index.html" class="btn btn-outline-primary rounded-pill px-4 me-2">Acasă</a>
                 <button onclick="window.print()" class="btn btn-primary rounded-pill px-4"><i class="bi bi-printer"></i> Printează biletul</button>
